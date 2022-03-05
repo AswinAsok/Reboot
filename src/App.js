@@ -3,12 +3,12 @@ import "./App.css";
 import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
 
-const API_URL = process.env.REACT_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [check, setCheck] = useState(false);
-  const [search, setSearch] = useState("SpiderMan");
+  const [search, setSearch] = useState("");
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
