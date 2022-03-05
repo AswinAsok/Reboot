@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import SearchIcon from "./search.svg";
+import MovieCard from "./MovieCard";
 //http://www.omdbapi.com/?i=tt3896198&apikey=7ba57fd4
 
 const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=7ba57fd4";
@@ -41,19 +42,7 @@ const App = () => {
       </div>
 
       <div className="container">
-        <div className="movie">
-          <div>
-            <p>{movie1.Year}</p>
-          </div>
-          <div>
-            <img src={movie1.Poster} alt={movie1.Title} />
-          </div>
-
-          <div>
-            <span>{movie1.Type}</span>
-            <h3>{movie1.Title}</h3>
-          </div>
-        </div>
+        <MovieCard movie1={movie1} />
       </div>
     </div>
   );
