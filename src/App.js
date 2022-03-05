@@ -2,18 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
-//http://www.omdbapi.com/?i=tt3896198&apikey=7ba57fd4
 
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=7ba57fd4";
-
-const movie1 = {
-  Title: "Avengers: Endgame",
-  Year: "2019",
-  imdbID: "tt4154796",
-  Type: "movie",
-  Poster:
-    "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
-};
+const API_URL = process.env.REACT_APP_APIURL;
 
 const App = () => {
   const [movies, setMovies] = useState([]);
