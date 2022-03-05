@@ -3,7 +3,7 @@ import "./App.css";
 import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
 
-const API_URL = process.env.REACT_APP_APIURL;
+const API_URL = process.env.REACT_API_URL;
 
 const App = () => {
   const [movies, setMovies] = useState([]);
