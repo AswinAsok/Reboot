@@ -17,6 +17,8 @@ const movie1 = {
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [check, setCheck] = useState(false);
+  const [search, setSearch] = useState("SpiderMan");
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -27,9 +29,9 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("Avengers");
-    console.log(movies);
-  }, []);
+    if (check) searchMovies(search);
+    setCheck(false);
+  }, [check]);
 
   return (
     <div className="app">
@@ -39,11 +41,18 @@ const App = () => {
         <input
           type="text"
           placeholder="Search for movies"
-          value="SuperMan"
-          onChange={() => {}}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
 
-        <img src={SearchIcon} alt="search" onClick={() => {}} />
+        <img
+          src={SearchIcon}
+          alt="search"
+          onClick={() => {
+            setCheck(true);
+          }}
+        />
       </div>
 
       {movies?.length > 0 ? (
