@@ -1,21 +1,30 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const name = null;
-  const isNameShowing = true;
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(100);
+  }, []);
 
   return (
     <div className="App">
-      <h1>Lets Go and Get It, {isNameShowing ? name : "someone"} !!</h1>
-      {name ? (
-        <>
-          <h1>{name}</h1>
-        </>
-      ) : (
-        <>
-          <h1>Name Not Found 404</h1>
-        </>
-      )}
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        -
+      </button>
+      <h1>{count}</h1>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        +
+      </button>
     </div>
   );
 };
