@@ -1,5 +1,5 @@
 # Project Reboot
-It has been almost 6 months since I have done any coding on react. Just finished a quick crash course on React.js by JavaScript Mastery and made this project. Since its a reboot of my react journey naming it as Reboot.
+It has been almost 6+ months since I have done any coding using React. Just finished a quick crash course on React.js by JavaScript Mastery and made this project. Since its a reboot of my react journey naming it as Reboot.
 
 ## About This App
 - A very simple light weight react application
